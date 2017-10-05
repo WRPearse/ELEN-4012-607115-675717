@@ -1,4 +1,0 @@
-  File "/home/wpearse/Documents/Nextflow/work/8b/5450d891d083bd2d30e59bf4d1ad6e/.command.sh", line 17
-    p = subprocess.Popen(['wc', '-l', fname, shell = True], stdout=subprocess.PIPE,
-                                                   ^
-SyntaxError: invalid syntax

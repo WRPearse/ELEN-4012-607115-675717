@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "/home/wpearse/Documents/Nextflow/work/6d/a5f9f4c43f3bd138239466e93f328d/.command.sh", line 25, in <module>
-    numberOfLines=file_len(fileName)
-  File "/home/wpearse/Documents/Nextflow/work/6d/a5f9f4c43f3bd138239466e93f328d/.command.sh", line 16, in file_len
-    os.chdir(workDir)
-NameError: global name 'workDir' is not defined

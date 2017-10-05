@@ -1,9 +1,0 @@
-WARNING:root:sed -n '1,9p' hapmap1.fam > hapmap1Family1.fam; mv hapmap1Family1.fam /home/wpearse/Documents/Nextflow/work/46/4ebadc88742491c6c22d0408cfc6be/output
-WARNING:root:sed -n '10,18p' hapmap1.fam > hapmap1Family2.fam; mv hapmap1Family2.fam /home/wpearse/Documents/Nextflow/work/46/4ebadc88742491c6c22d0408cfc6be/output
-WARNING:root:sed -n '19,27p' hapmap1.fam > hapmap1Family3.fam; mv hapmap1Family3.fam /home/wpearse/Documents/Nextflow/work/46/4ebadc88742491c6c22d0408cfc6be/output
-WARNING:root:sed -n '28,36p' hapmap1.fam > hapmap1Family4.fam; mv hapmap1Family4.fam /home/wpearse/Documents/Nextflow/work/46/4ebadc88742491c6c22d0408cfc6be/output
-WARNING:root:sed -n '37,45p' hapmap1.fam > hapmap1Family5.fam; mv hapmap1Family5.fam /home/wpearse/Documents/Nextflow/work/46/4ebadc88742491c6c22d0408cfc6be/output
-WARNING:root:sed -n '46,54p' hapmap1.fam > hapmap1Family6.fam; mv hapmap1Family6.fam /home/wpearse/Documents/Nextflow/work/46/4ebadc88742491c6c22d0408cfc6be/output
-WARNING:root:sed -n '55,63p' hapmap1.fam > hapmap1Family7.fam; mv hapmap1Family7.fam /home/wpearse/Documents/Nextflow/work/46/4ebadc88742491c6c22d0408cfc6be/output
-WARNING:root:sed -n '64,72p' hapmap1.fam > hapmap1Family8.fam; mv hapmap1Family8.fam /home/wpearse/Documents/Nextflow/work/46/4ebadc88742491c6c22d0408cfc6be/output
-WARNING:root:sed -n '73,81p' hapmap1.fam > hapmap1Family9.fam; mv hapmap1Family9.fam /home/wpearse/Documents/Nextflow/work/46/4ebadc88742491c6c22d0408cfc6be/output
