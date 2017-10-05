@@ -1,0 +1,5 @@
+WARNING:root:9
+Traceback (most recent call last):
+  File "/home/wpearse/Documents/Nextflow/work/12/a65821c101a61038b51798156efe3b/.command.sh", line 37, in <module>
+    logging.warning(cmdStr)
+NameError: name 'cmdStr' is not defined

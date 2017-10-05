@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/wpearse/Documents/Nextflow/work/c5/55580558b69c945f96b03b7a82ef45/.command.sh", line 29, in <module>
+    numberOfLines=file_len(fileName)
+  File "/home/wpearse/Documents/Nextflow/work/c5/55580558b69c945f96b03b7a82ef45/.command.sh", line 20, in file_len
+    os.chdir(workDir + "/input")
+OSError: [Errno 2] No such file or directory: '/home/wpearse/Documents/Nextflow/input/input'

@@ -1,0 +1,4 @@
+  File "/home/wpearse/Documents/Nextflow/work/35/9f7cd5a5da15d176359836bfca8998/.command.sh", line 43
+    cmdStr = "sed -n '" + str(lowerbound) + "," + str(lowerbound + subsetValue1 -1) + "p' " + setName + ".fam > " + setName + "Family" + str(i) + ".fam"
+    ^
+IndentationError: unexpected indent

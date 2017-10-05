@@ -1,0 +1,95 @@
+Oct-04 22:23:24.904 [main] DEBUG nextflow.cli.Launcher - $> ./nextflow run CrossValidate.nf
+Oct-04 22:23:25.317 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 0.25.7
+Oct-04 22:23:25.350 [main] INFO  nextflow.cli.CmdRun - Launching `CrossValidate.nf` [backstabbing_torricelli] - revision: f53d23b7e0
+Oct-04 22:23:26.019 [main] DEBUG nextflow.Session - Session uuid: a7b4b522-1c18-4169-bfc6-e0645c48c8e6
+Oct-04 22:23:26.020 [main] DEBUG nextflow.Session - Run name: backstabbing_torricelli
+Oct-04 22:23:26.023 [main] DEBUG nextflow.Session - Executor pool size: 2
+Oct-04 22:23:26.043 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 0.25.7 build 4531
+  Modified: 06-09-2017 17:25 UTC (19:25 SAST)
+  System: Linux 4.10.0-19-generic
+  Runtime: Groovy 2.4.11 on OpenJDK 64-Bit Server VM 1.8.0_131-8u131-b11-2ubuntu1.17.04.3-b11
+  Encoding: UTF-8 (UTF-8)
+  Process: 18630@wpearse-VirtualBox [127.0.1.1]
+  CPUs: 1 - Mem: 3.9 GB (1 GB) - Swap: 1.4 GB (1.4 GB)
+Oct-04 22:23:26.140 [main] DEBUG nextflow.Session - Work-dir: /home/wpearse/Documents/Nextflow/work [ext2/ext3]
+Oct-04 22:23:26.354 [main] DEBUG nextflow.Session - Session start invoked
+Oct-04 22:23:26.368 [main] DEBUG nextflow.processor.TaskDispatcher - Dispatcher > start
+Oct-04 22:23:26.379 [main] DEBUG nextflow.script.ScriptRunner - > Script parsing
+Oct-04 22:23:26.682 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Oct-04 22:23:26.846 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Oct-04 22:23:26.847 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Oct-04 22:23:26.854 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Oct-04 22:23:26.858 [main] INFO  nextflow.executor.Executor - [warm up] executor > local
+Oct-04 22:23:26.868 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=1; memory=3.9 GB; capacity=1; pollInterval=100ms; dumpInterval=5m
+Oct-04 22:23:26.890 [main] DEBUG nextflow.processor.TaskDispatcher - Starting monitor: LocalPollingMonitor
+Oct-04 22:23:26.892 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Oct-04 22:23:26.906 [main] DEBUG nextflow.executor.Executor - Invoke register for executor: local
+Oct-04 22:23:26.956 [main] WARN  nextflow.processor.TaskProcessor - Input `set` must define at least two component -- Check process `generateFolds`
+Oct-04 22:23:26.959 [main] WARN  nextflow.processor.TaskProcessor - Output `set` must define at least two component -- Check process `generateFolds`
+Oct-04 22:23:27.131 [main] DEBUG nextflow.Session - >>> barrier register (process: generateFolds)
+Oct-04 22:23:27.152 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > generateFolds -- maxForks: 2
+Oct-04 22:23:27.218 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Oct-04 22:23:27.219 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Oct-04 22:23:27.220 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Oct-04 22:23:27.222 [main] WARN  nextflow.processor.TaskProcessor - Input `set` must define at least two component -- Check process `associationTest`
+Oct-04 22:23:27.223 [main] DEBUG nextflow.Session - >>> barrier register (process: associationTest)
+Oct-04 22:23:27.258 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > associationTest -- maxForks: 2
+Oct-04 22:23:27.282 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Oct-04 22:23:27.283 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Oct-04 22:23:27.284 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Oct-04 22:23:27.286 [main] DEBUG nextflow.Session - >>> barrier register (process: squeeze)
+Oct-04 22:23:27.310 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > squeeze -- maxForks: 2
+Oct-04 22:23:27.340 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Oct-04 22:23:27.340 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Oct-04 22:23:27.340 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Oct-04 22:23:27.341 [main] DEBUG nextflow.Session - >>> barrier register (process: makeScoreFile)
+Oct-04 22:23:27.374 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > makeScoreFile -- maxForks: 2
+Oct-04 22:23:27.382 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Oct-04 22:23:27.383 [main] DEBUG nextflow.Session - Session await
+Oct-04 22:23:27.705 [Task submitter] INFO  nextflow.Session - [16/6bb65c] Submitted process > generateFolds
+Oct-04 22:23:28.219 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: generateFolds; status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/16/6bb65cae3b7c50835b550aa30d9fdb]
+Oct-04 22:23:28.286 [Actor Thread 1] WARN  nextflow.processor.TaskProcessor - Input tuple does not match input set cardinality declared by process `associationTest` -- offending value: /home/wpearse/Documents/Nextflow/input
+Oct-04 22:23:28.334 [Task submitter] INFO  nextflow.Session - [bb/89897d] Submitted process > associationTest
+Oct-04 22:23:28.340 [Actor Thread 2] DEBUG nextflow.Session - <<< barrier arrive (process: generateFolds)
+Oct-04 22:23:28.468 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: associationTest; status: COMPLETED; exit: 2; error: -; workDir: /home/wpearse/Documents/Nextflow/work/bb/89897d0aeda2929284de2f1648ed6c]
+Oct-04 22:23:28.569 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'associationTest'
+
+Caused by:
+  Process `associationTest` terminated with an error exit status (2)
+
+Command executed:
+
+  plink --bfile cleaned --threads 1 --assoc --out association
+
+Command exit status:
+  2
+
+Command output:
+  PLINK v1.90b4.6 64-bit (15 Aug 2017)           www.cog-genomics.org/plink/1.9/
+  (C) 2005-2017 Shaun Purcell, Christopher Chang   GNU General Public License v3
+  Logging to association.log.
+  Options in effect:
+    --assoc
+    --bfile cleaned
+    --out association
+    --threads 1
+  
+  3949 MB RAM detected; reserving 1974 MB for main workspace.
+
+Command error:
+  Error: Failed to open cleaned.bed.
+
+Work dir:
+  /home/wpearse/Documents/Nextflow/work/bb/89897d0aeda2929284de2f1648ed6c
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+Oct-04 22:23:28.582 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Process `associationTest` terminated with an error exit status (2)
+Oct-04 22:23:28.587 [Actor Thread 5] DEBUG nextflow.Session - <<< barrier arrive (process: associationTest)
+Oct-04 22:23:28.593 [Actor Thread 5] DEBUG nextflow.Session - <<< barrier arrive (process: makeScoreFile)
+Oct-04 22:23:28.594 [Actor Thread 6] DEBUG nextflow.Session - <<< barrier arrive (process: squeeze)
+Oct-04 22:23:28.595 [main] DEBUG nextflow.Session - Session await > all process finished
+Oct-04 22:23:28.660 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Oct-04 22:23:28.665 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local)
+Oct-04 22:23:28.705 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Oct-04 22:23:28.800 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

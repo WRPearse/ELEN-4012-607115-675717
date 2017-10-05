@@ -1,0 +1,10 @@
+WARNING:root:/home/wpearse/Documents/Nextflow/input
+WARNING:root:/home/wpearse/Documents/Nextflow/input
+WARNING:root:/home/wpearse/Documents/Nextflow/input
+WARNING:root:/home/wpearse/Documents/Nextflow/input
+WARNING:root:/home/wpearse/Documents/Nextflow/input
+WARNING:root:/home/wpearse/Documents/Nextflow/input
+WARNING:root:/home/wpearse/Documents/Nextflow/input
+WARNING:root:/home/wpearse/Documents/Nextflow/input
+WARNING:root:/home/wpearse/Documents/Nextflow/input
+WARNING:root:sed -n '82,89p' hapmap1.fam > hapmap1Family10.fam

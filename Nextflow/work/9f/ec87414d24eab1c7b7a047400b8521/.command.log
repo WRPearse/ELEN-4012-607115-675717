@@ -1,0 +1,4 @@
+  File "/home/wpearse/Documents/Nextflow/work/9f/ec87414d24eab1c7b7a047400b8521/.command.sh", line 42
+    lowerbound += subsetValue1
+    ^
+IndentationError: unexpected indent

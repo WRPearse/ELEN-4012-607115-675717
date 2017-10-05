@@ -1,0 +1,4 @@
+  File "/home/wpearse/Documents/Nextflow/work/63/b06e6281a98f8054da0dddee7e9376/.command.sh", line 44
+    if i <= subsetSize1:
+    ^
+IndentationError: unexpected indent

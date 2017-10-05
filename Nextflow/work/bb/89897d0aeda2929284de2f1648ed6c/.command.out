@@ -1,0 +1,10 @@
+PLINK v1.90b4.6 64-bit (15 Aug 2017)           www.cog-genomics.org/plink/1.9/
+(C) 2005-2017 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Logging to association.log.
+Options in effect:
+  --assoc
+  --bfile cleaned
+  --out association
+  --threads 1
+
+3949 MB RAM detected; reserving 1974 MB for main workspace.

@@ -1,0 +1,139 @@
+Oct-04 22:18:59.630 [main] DEBUG nextflow.cli.Launcher - $> ./nextflow run CrossValidate.nf
+Oct-04 22:19:00.126 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 0.25.7
+Oct-04 22:19:00.158 [main] INFO  nextflow.cli.CmdRun - Launching `CrossValidate.nf` [boring_lovelace] - revision: f53d23b7e0
+Oct-04 22:19:00.870 [main] DEBUG nextflow.Session - Session uuid: f923febd-0070-45c0-b655-b801ef80703b
+Oct-04 22:19:00.871 [main] DEBUG nextflow.Session - Run name: boring_lovelace
+Oct-04 22:19:00.874 [main] DEBUG nextflow.Session - Executor pool size: 2
+Oct-04 22:19:00.892 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 0.25.7 build 4531
+  Modified: 06-09-2017 17:25 UTC (19:25 SAST)
+  System: Linux 4.10.0-19-generic
+  Runtime: Groovy 2.4.11 on OpenJDK 64-Bit Server VM 1.8.0_131-8u131-b11-2ubuntu1.17.04.3-b11
+  Encoding: UTF-8 (UTF-8)
+  Process: 18423@wpearse-VirtualBox [127.0.1.1]
+  CPUs: 1 - Mem: 3.9 GB (462.4 MB) - Swap: 1.4 GB (1.4 GB)
+Oct-04 22:19:00.998 [main] DEBUG nextflow.Session - Work-dir: /home/wpearse/Documents/Nextflow/work [ext2/ext3]
+Oct-04 22:19:01.204 [main] DEBUG nextflow.Session - Session start invoked
+Oct-04 22:19:01.223 [main] DEBUG nextflow.processor.TaskDispatcher - Dispatcher > start
+Oct-04 22:19:01.227 [main] DEBUG nextflow.script.ScriptRunner - > Script parsing
+Oct-04 22:19:01.528 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Oct-04 22:19:01.716 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Oct-04 22:19:01.722 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Oct-04 22:19:01.737 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Oct-04 22:19:01.744 [main] INFO  nextflow.executor.Executor - [warm up] executor > local
+Oct-04 22:19:01.751 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=1; memory=3.9 GB; capacity=1; pollInterval=100ms; dumpInterval=5m
+Oct-04 22:19:01.767 [main] DEBUG nextflow.processor.TaskDispatcher - Starting monitor: LocalPollingMonitor
+Oct-04 22:19:01.769 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Oct-04 22:19:01.785 [main] DEBUG nextflow.executor.Executor - Invoke register for executor: local
+Oct-04 22:19:01.942 [main] WARN  nextflow.processor.TaskProcessor - Input `set` must define at least two component -- Check process `generateFolds`
+Oct-04 22:19:01.945 [main] WARN  nextflow.processor.TaskProcessor - Output `set` must define at least two component -- Check process `generateFolds`
+Oct-04 22:19:02.022 [main] DEBUG nextflow.Session - >>> barrier register (process: generateFolds)
+Oct-04 22:19:02.062 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > generateFolds -- maxForks: 2
+Oct-04 22:19:02.178 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Oct-04 22:19:02.179 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Oct-04 22:19:02.182 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Oct-04 22:19:02.183 [main] WARN  nextflow.processor.TaskProcessor - Input `set` must define at least two component -- Check process `associationTest`
+Oct-04 22:19:02.186 [main] DEBUG nextflow.Session - >>> barrier register (process: associationTest)
+Oct-04 22:19:02.215 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > associationTest -- maxForks: 2
+Oct-04 22:19:02.258 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Oct-04 22:19:02.260 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Oct-04 22:19:02.260 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Oct-04 22:19:02.265 [main] DEBUG nextflow.Session - >>> barrier register (process: squeeze)
+Oct-04 22:19:02.285 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > squeeze -- maxForks: 2
+Oct-04 22:19:02.304 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Oct-04 22:19:02.309 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Oct-04 22:19:02.320 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Oct-04 22:19:02.323 [main] DEBUG nextflow.Session - >>> barrier register (process: makeScoreFile)
+Oct-04 22:19:02.346 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > makeScoreFile -- maxForks: 2
+Oct-04 22:19:02.354 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Oct-04 22:19:02.357 [main] DEBUG nextflow.Session - Session await
+Oct-04 22:19:02.593 [Task submitter] INFO  nextflow.Session - [46/4ebadc] Submitted process > generateFolds
+Oct-04 22:19:03.007 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: generateFolds; status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/46/4ebadc88742491c6c22d0408cfc6be]
+Oct-04 22:19:03.175 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'generateFolds'
+
+Caused by:
+  Missing output file(s) `hapmap1Family*.fam` expected by process `generateFolds`
+
+Command executed [/home/wpearse/Documents/Nextflow/templates/kFold.py]:
+
+  #!/usr/bin/env python
+  from __future__ import print_function
+  import sys
+  import subprocess
+  from subprocess import call
+  import math
+  import os
+  import logging
+  # Called as a template from nextflow
+  if len(sys.argv) == 1:
+      sys.argv=["kFold.py","hapmap1","10","/home/wpearse/Documents/Nextflow/input"]
+  
+  from itertools import (takewhile,repeat)
+  
+  setName = sys.argv[1]
+  noFolds = int(sys.argv[2])
+  workDir = sys.argv[3]
+  
+  workPath = os.path.dirname(os.path.realpath(__file__))
+  
+  def file_len(fname):
+      os.chdir(workDir)
+      p = subprocess.Popen(['wc', '-l', fname], stdout=subprocess.PIPE,
+                                                stderr=subprocess.PIPE)
+      result, err = p.communicate()
+      if p.returncode != 0:
+          raise IOError(err)
+      return int(result.strip().split()[0])
+  
+  fileName = sys.argv[1]+".fam"
+  numberOfLines=file_len(fileName)
+  
+  subsetSize1 = numberOfLines % (noFolds)
+  subsetValue1 = int(math.ceil(numberOfLines/float(noFolds)))
+  subsetValue2 = int(math.floor(numberOfLines/float(noFolds)))
+  lowerbound = 1
+  
+  for i in range(1,noFolds+1):
+      if i <= subsetSize1:
+          os.chdir(workDir)
+          cmdStr = "sed -n '" + str(lowerbound) + "," + str(lowerbound + subsetValue1 -1) + "p' " + setName + ".fam > " + setName + "Family" + str(i) + ".fam; mv " + setName + "Family" + str(i) + ".fam " + workPath + "/output"
+          logging.warning(cmdStr)
+          subprocess.call(cmdStr,shell=True)
+          lowerbound += subsetValue1
+      else:
+          cmdStr = "sed -n '" + str(lowerbound) + "," + str(lowerbound + subsetValue2 -1) + "p' " + setName + ".fam > " + setName + "Family" + str(i) + ".fam; mv " + setName + "Family" + str(i) + ".fam " + workPath + "/output"
+          os.chdir(workDir)
+          subprocess.call(cmdStr,shell=True)
+          lowerbound += subsetValue2
+
+Command exit status:
+  0
+
+Command output:
+  (empty)
+
+Command error:
+  WARNING:root:sed -n '1,9p' hapmap1.fam > hapmap1Family1.fam; mv hapmap1Family1.fam output
+  WARNING:root:sed -n '10,18p' hapmap1.fam > hapmap1Family2.fam; mv hapmap1Family2.fam output
+  WARNING:root:sed -n '19,27p' hapmap1.fam > hapmap1Family3.fam; mv hapmap1Family3.fam output
+  WARNING:root:sed -n '28,36p' hapmap1.fam > hapmap1Family4.fam; mv hapmap1Family4.fam output
+  WARNING:root:sed -n '37,45p' hapmap1.fam > hapmap1Family5.fam; mv hapmap1Family5.fam output
+  WARNING:root:sed -n '46,54p' hapmap1.fam > hapmap1Family6.fam; mv hapmap1Family6.fam output
+  WARNING:root:sed -n '55,63p' hapmap1.fam > hapmap1Family7.fam; mv hapmap1Family7.fam output
+  WARNING:root:sed -n '64,72p' hapmap1.fam > hapmap1Family8.fam; mv hapmap1Family8.fam output
+  WARNING:root:sed -n '73,81p' hapmap1.fam > hapmap1Family9.fam; mv hapmap1Family9.fam output
+
+Work dir:
+  /home/wpearse/Documents/Nextflow/work/46/4ebadc88742491c6c22d0408cfc6be
+
+Tip: you can try to figure out what's wrong by changing to the process work dir and showing the script file named `.command.sh`
+Oct-04 22:19:03.192 [Actor Thread 2] DEBUG nextflow.Session - <<< barrier arrive (process: generateFolds)
+Oct-04 22:19:03.195 [Actor Thread 2] DEBUG nextflow.Session - <<< barrier arrive (process: squeeze)
+Oct-04 22:19:03.196 [Actor Thread 5] DEBUG nextflow.Session - <<< barrier arrive (process: associationTest)
+Oct-04 22:19:03.196 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Missing output file(s) `hapmap1Family*.fam` expected by process `generateFolds`
+Oct-04 22:19:03.239 [Actor Thread 7] DEBUG nextflow.Session - <<< barrier arrive (process: makeScoreFile)
+Oct-04 22:19:03.240 [main] DEBUG nextflow.Session - Session await > all process finished
+Oct-04 22:19:03.278 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Oct-04 22:19:03.286 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local)
+Oct-04 22:19:03.399 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Oct-04 22:19:03.499 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
