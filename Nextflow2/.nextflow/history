@@ -177,3 +177,6 @@
 2017-10-05 18:23:22	-	boring_mclean	-	c292ae49281604fd053ed1242fca6c53	1eac835a-2827-4e34-abb7-093354ee99af	nextflow run CrossValidate.nf
 2017-10-05 18:24:15	-	insane_bassi	-	254680282c3d75e9399c4ffca0a2dbc9	d29afc2b-3814-4c4f-a6a6-f93078b13a8f	nextflow run CrossValidate.nf
 2017-10-05 18:24:39	9.6s	lethal_davinci	OK	60d23db1dc07457df79952ef55d3a1bc	196c9398-88e3-4079-8ba5-c71977adb240	nextflow run CrossValidate.nf
+2017-10-05 18:46:36	-	shrivelled_ramanujan	-	65719efd688069a4defeaa7bedc617cd	dabce01e-4ada-4cc0-b2f4-2649b6c87e0f	nextflow run CrossValidate.nf
+2017-10-05 18:55:28	8.6s	sad_jepsen	ERR	95c76cc5f2ab339a43017e8e309de962	b0ab73e6-d8fe-411d-a274-a98f52cf1646	nextflow run CrossValidate.nf
+2017-10-05 19:00:25	8.2s	gloomy_carson	ERR	c824f0347140ebd0296b7eb75f137107	a5865221-cf88-48a3-8b93-8c01f5134582	nextflow run CrossValidate.nf

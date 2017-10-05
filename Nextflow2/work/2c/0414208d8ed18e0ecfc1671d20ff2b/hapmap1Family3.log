@@ -1,0 +1,19 @@
+PLINK v1.90b4.6 64-bit (15 Aug 2017)
+Options in effect:
+  --bfile hapmap1
+  --keep-fam hapmap1Family3.fam
+  --out hapmap1Family3
+  --score hapmap1Family3.fam.assocSqueezed.assoc.score
+
+Hostname: wpearse-VirtualBox
+Working directory: /home/wpearse/Documents/Nextflow/work/2c/0414208d8ed18e0ecfc1671d20ff2b
+Start time: Thu Oct  5 19:00:32 2017
+
+Random number seed: 1507222832
+3949 MB RAM detected; reserving 1974 MB for main workspace.
+83534 variants loaded from .bim file.
+89 people (89 males, 0 females) loaded from .fam.
+89 phenotype values loaded from .fam.
+Error: Failed to open hapmap1Family3.fam.
+
+End time: Thu Oct  5 19:00:32 2017

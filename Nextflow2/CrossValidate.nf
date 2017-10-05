@@ -41,6 +41,7 @@ process generateFolds {
    publishDir params.output_dir, overwrite:true, mode:'copy'
    output:
       set file(params.input_pat+"Family*.fam") into families_ch1
+      set file(params.input_pat+"Family*.fam") into families_ch2
    script:
     setName = params.input_pat
     noFolds = params.no_folds
@@ -113,7 +114,9 @@ process scoreFamily {
 
    input:
     set file(params.input_pat+'.bed'),file(params.input_pat+'.bim'),file(params.input_pat+'.fam') from input_ch2
+    set file(family) from families_ch2
     each file(fileName) from score_ch
+
 
    publishDir params.output_dir, overwrite:true, mode:'copy'
    output:
@@ -121,11 +124,13 @@ process scoreFamily {
    script:
    setName = params.input_pat
    fileNameStr = fileName.getName()
-   famFile = fileNameStr.replaceFirst(/.fam.assocSqueezed.assoc.score/,"")
+   scoreFile = fileNameStr//.replaceFirst(/.score/,"")
+   famFile = fileNameStr.replaceFirst(/.assocSqueezed.assoc.score/,"")
+   outFile = fileNameStr.replaceFirst(/.fam.assocSqueezed.assoc.score/,"")
    """
-   plink --bfile $setName --score ${fileName} --out ${famFile}
+   plink --bfile $setName --keep-fam $famFile --score $scoreFile --out $outFile
    """
-   //plink --bfile "+ setName + " --keep-fam " + setName + "Family" + to_string(FamilyID) + ".fam --score " + setName + "Family" + to_string(FamilyID) + "Score --out Family" + to_string(FamilyID) + "SResult");
+
 
 }
 

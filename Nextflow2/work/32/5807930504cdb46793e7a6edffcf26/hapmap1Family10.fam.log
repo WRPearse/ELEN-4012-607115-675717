@@ -1,0 +1,28 @@
+PLINK v1.90b4.6 64-bit (15 Aug 2017)
+Options in effect:
+  --allow-no-sex
+  --assoc
+  --bfile hapmap1
+  --out hapmap1Family10.fam
+  --remove-fam hapmap1Family10.fam
+
+Hostname: wpearse-VirtualBox
+Working directory: /home/wpearse/Documents/Nextflow/work/32/5807930504cdb46793e7a6edffcf26
+Start time: Thu Oct  5 19:00:28 2017
+
+Random number seed: 1507222828
+3949 MB RAM detected; reserving 1974 MB for main workspace.
+83534 variants loaded from .bim file.
+89 people (89 males, 0 females) loaded from .fam.
+89 phenotype values loaded from .fam.
+--remove-fam: 81 people remaining.
+Using 1 thread.
+Before main variant filters, 81 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate in remaining samples is 0.994562.
+83534 variants and 81 people pass filters and QC.
+Among remaining phenotypes, 38 are cases and 43 are controls.
+Writing C/C --assoc report to hapmap1Family10.fam.assoc ...
+done.
+
+End time: Thu Oct  5 19:00:28 2017
