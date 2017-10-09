@@ -40,7 +40,7 @@ process generateFolds {
     set file(params.input_pat+'.fam') from params.input_dir
    publishDir params.output_dir, overwrite:true, mode:'copy'
    output:
-      set file(params.input_pat+"Family*.fam") into families_ch
+      set file(params.input_pat+"Family*.fam") into families_ch1
    script:
     setName = params.input_pat
     noFolds = params.no_folds
@@ -48,61 +48,92 @@ process generateFolds {
     template "kFold.py"
 }
 
+input_ch = Channel.create()
+Channel
+    .from(file(bed),file(bim),file(fam))
+    .buffer(size:3)
+    .map { a -> [checker(a[0]), checker(a[1]), checker(a[2])] }
+    .separate( input_ch ) { a -> [a,a] }
+
 process associationTest {
    echo true
+   family = params.input_pat+"Family*"
    input:
-    set file(params.input_pat+'.bed'),file(params.input_pat+'.bim') from params.input_dir
-    set "family*.fam" from families_ch
+    set file(params.input_pat+'.bed'),file(params.input_pat+'.bim'),file(params.input_pat+'.fam') from input_ch
+    each file(family) from families_ch1
 
    publishDir params.output_dir, overwrite:true, mode:'copy'
    output:
-      file("family${x}assoc.assoc") into assoc_ch
+      set file(params.input_pat+"*.assoc") into assoc_ch
    script:
+   setName = params.input_pat
+   fileNameStr = family.getName()
+   assocFile = fileNameStr.replaceFirst(/.fam/,"")
    """
-   plink --bfile cleaned --threads 1 --assoc --out association
+   plink --bfile $setName --assoc --allow-no-sex --remove-fam ${family} --out $assocFile
    """
 }
 
 process squeeze {
    echo true
+   familyAssoc = params.input_pat+"Family*.assoc"
    input:
-    file('association.assoc') from assoc_ch
+    set file(familyAssoc) from assoc_ch
    publishDir params.output_dir, overwrite:true, mode:'copy'
    output:
-      file("squeezedAssoc.assoc") into squeeze_ch
+      file(params.input_pat+"*Squeezed.assoc") into squeeze_ch
    script:
+   fileNameStr = familyAssoc.getName()
+   squeezeFile = fileNameStr.replaceFirst(/.assoc/,"")
    """
-   tr -s \\  < association.assoc > squeezedAssoc.assoc
+   tr -s \\  < ${familyAssoc} > ${squeezeFile}Squeezed.assoc
    """
 }
 
 process makeScoreFile {
    echo true
+   fileName = params.input_pat+"*.assoc"
    input:
-    file('squeezedAssoc.assoc') from squeeze_ch
+    file(fileName) from squeeze_ch
    publishDir params.output_dir, overwrite:true, mode:'copy'
    output:
-      file("assocScorer.score") into score_ch
+      file(params.input_pat+"*.score") into score_ch
    script:
+   fileNameStr = fileName.getName()
+   scoreFile = fileNameStr.replaceFirst(/Squeezed.assoc/,"")
    """
-   dir;
-   cut -f 3,5,11 -d\\  squeezedAssoc.assoc >  assocScorer.score
+   cut -f 3,5,11 -d\\  ${fileName} >  ${scoreFile}.score
    """
 }
-/*
+
+input_ch2 = Channel.create()
+Channel
+    .from(file(bed),file(bim),file(fam))
+    .buffer(size:3)
+    .map { a -> [checker(a[0]), checker(a[1]), checker(a[2])] }
+    .separate( input_ch2 ) { a -> [a,a] }
+
 process scoreFamily {
    echo true
+   scoreFile = params.input_pat+"*.score"
+
    input:
-    file('assocScorer.score') from score_ch
-    set file('cleaned.bed'),file('cleaned.bim'),file('cleaned.fam') from input_ch3
+    set file(params.input_pat+'.bed'),file(params.input_pat+'.bim'),file(params.input_pat+'.fam') from input_ch2
+    each file(scoreFile) from score_ch
+    family = Channel.fromPath(params.output_dir + "/*.fam")
+    set file(families) from family
 
    publishDir params.output_dir, overwrite:true, mode:'copy'
    output:
-      file("familyScore.profile") into result_ch
+      file(params.input_pat+"Family*.profile") into result_ch
    script:
+   setName = params.input_pat
+   fileNameStr = scoreFile.getName()
+   famFile = fileNameStr.replaceFirst(/.score/,".fam")
+   outFile = fileNameStr.replaceFirst(/.score/,"")
    """
-   plink --bfile cleaned --score assocScorer.score --out familyScore
+   plink --bfile $setName --keep-fam $famFile --score $scoreFile --out $outFile
    """
-}*/
+}
 
-//Channel.from(result_ch).subscribe onComplete { println "Cross trainign complete!!!" }
+//Channel.from(result_ch).subscribe onComplete { println "Cross training complete!!!" }

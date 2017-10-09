@@ -26,7 +26,7 @@
 2017-10-04 16:07:06	2.7s	extravagant_euler	ERR	b7be6b0a2c1937c71e8fb5f015cb320e	8299db98-b6cc-426f-937d-b8790fa5b343	nextflow run Hello.nf --computePCA --allow-no-sex --chi2
 2017-10-04 16:08:31	2.3s	silly_caravaggio	ERR	b7be6b0a2c1937c71e8fb5f015cb320e	8ee75958-2e07-4e97-958d-2c2b995389ac	nextflow run Hello.nf --computePCA --allow-no-sex --chi2
 2017-10-04 16:08:58	3.2s	elegant_colden	ERR	b7be6b0a2c1937c71e8fb5f015cb320e	7d649096-f1d1-4610-b5b9-9fdd65d380b7	nextflow run Hello.nf --computePCA --allow-no-sex --chi2
-2017-10-04 16:15:29	2.4s	disturbed_hodgkin	OK	b7be6b0a2c1937c71e8fb5f015cb320e	285f7533-8e23-4855-b346-a05039cbdb2b	nextflow run Hello.nf --computePCA --allow-no-sex --chi2
+2017-10-04 16:15:29	4d 21h 12m 32s	disturbed_hodgkin	ERR	b7be6b0a2c1937c71e8fb5f015cb320e	285f7533-8e23-4855-b346-a05039cbdb2b	nextflow run Hello.nf --computePCA --allow-no-sex --chi2
 2017-10-04 16:16:19	2.8s	disturbed_lalande	OK	b7be6b0a2c1937c71e8fb5f015cb320e	f49c1a1f-6cf5-4ac7-a9bc-dcaf5c6c379c	nextflow run Hello.nf --computeTest --allow-no-sex --chi2
 2017-10-04 16:17:42	4.1s	small_pike	OK	b7be6b0a2c1937c71e8fb5f015cb320e	efe487ea-1bcb-4d5c-bf30-9757e4cad8da	nextflow run Hello.nf --computeTest
 2017-10-04 16:50:50	-	drunk_darwin	-	4a029a9b4210176b459acca8b303a06c	49bc9714-b1db-4da2-99ed-012394df9e5c	nextflow run Hello.nf --computeTest
@@ -114,3 +114,88 @@
 2017-10-04 22:19:00	3.4s	boring_lovelace	ERR	f53d23b7e09a77b0a4fe5966109ae4b7	f923febd-0070-45c0-b655-b801ef80703b	nextflow run CrossValidate.nf
 2017-10-04 22:20:23	3.3s	disturbed_montalcini	ERR	f53d23b7e09a77b0a4fe5966109ae4b7	d21129d9-23fb-4ab0-be31-f9212502e243	nextflow run CrossValidate.nf
 2017-10-04 22:23:26	2.7s	backstabbing_torricelli	ERR	f53d23b7e09a77b0a4fe5966109ae4b7	a7b4b522-1c18-4169-bfc6-e0645c48c8e6	nextflow run CrossValidate.nf
+2017-10-05 14:21:03	-	tiny_waddington	-	81a1bd1f86cc80962820887433c60940	48f8ad4f-ce12-4a69-a519-5938bbcf38a9	nextflow run CrossValidate.nf
+2017-10-05 14:21:24	-	deadly_torricelli	-	de01b3dc3e43d217eb0323520c94cfca	51dc0712-a0c6-4df3-b437-c99e6228faf6	nextflow run CrossValidate.nf
+2017-10-05 14:22:07	-	boring_visvesvaraya	-	38ca62564e499ac30ef494aed94a7d8d	a7af5786-93e0-4b43-a0af-32fb2146b7f5	nextflow run CrossValidate.nf
+2017-10-05 14:25:00	-	dreamy_mirzakhani	-	67d8461c681922f96706b5473b893b4b	84b7638f-9a4e-4d65-83e6-18c9a548913d	nextflow run CrossValidate.nf
+2017-10-05 14:26:49	-	distracted_einstein	-	a61dcd4bd5acdc92927f81376c88c490	21b170ff-6ec9-4331-b064-89bcf89a4cd9	nextflow run CrossValidate.nf
+2017-10-05 14:27:24	-	curious_turing	-	bff474831afbc7b06bf51bf9abd526a9	2a6dc8d5-4ec9-4980-bc82-e8cf4c73fb46	nextflow run CrossValidate.nf
+2017-10-05 14:42:53	3.2s	tender_almeida	ERR	39abc3ef7633a96f6851670f582017dd	461dd690-2756-4db7-871e-d0eecd70d1bd	nextflow run CrossValidate.nf
+2017-10-05 14:43:57	3.2s	hungry_panini	ERR	4e484f9f5e087162b334b1e6a939bccb	55fae0ff-dd25-475f-b410-c80f31e2c600	nextflow run CrossValidate.nf
+2017-10-05 14:45:17	3.4s	silly_ride	ERR	dc2bb7ce69d353f674e82975220cd4eb	3ff016c6-d6c6-4477-8573-50fd58c02ae6	nextflow run CrossValidate.nf
+2017-10-05 16:00:56	-	nostalgic_keller	-	a4ac36e3ba2baa157e0cd21c9c35bb14	1b6f2b23-9a09-4a12-b547-453936deb1b0	nextflow run CrossValidate.nf
+2017-10-05 16:03:09	3.7s	nostalgic_jang	ERR	f5c42f402a1f48b577c1997da450b7cf	ec6f61c7-7e21-46e9-b00a-d056dbd8fed3	nextflow run CrossValidate.nf
+2017-10-05 16:36:06	2.6s	intergalactic_lamarr	ERR	75773f54677aa32d2efd0ae1a7ab359b	71c9cc6f-8352-46bd-aa13-08bc593ee6fc	nextflow run CrossValidate.nf
+2017-10-05 16:36:42	2.7s	crazy_picasso	ERR	56eda0f4da65f84844c482288f810e1e	441a42af-58c8-4ec4-ae54-56aa96d2b7b4	nextflow run CrossValidate.nf
+2017-10-05 16:37:55	3.2s	silly_heyrovsky	ERR	56eda0f4da65f84844c482288f810e1e	d3ab3577-28bf-4e74-8c56-1aaa9b2c8af5	nextflow run CrossValidate.nf
+2017-10-05 16:41:27	3.2s	berserk_cray	ERR	f5493df69d725a0b653316d3f848948c	fd8f49f0-49d3-4ba9-aa84-a314f27f3b40	nextflow run CrossValidate.nf
+2017-10-05 16:50:36	-	cheeky_hopper	-	cda1ba3be451a5365f137da6cfb2c0bb	76be3430-431d-4b64-9660-009354b34bde	nextflow run CrossValidate.nf
+2017-10-05 16:51:08	-	naughty_faggin	-	a273787fc201738b88738bfc0dc71cc8	f4536226-aad7-419f-b0fc-cd5574154dc9	nextflow run CrossValidate.nf
+2017-10-05 16:51:22	3.1s	magical_sanger	ERR	6ed2d6696b818c14b113bde7e7068ba0	82f840d8-7e8d-4902-9914-1252a5e90d3c	nextflow run CrossValidate.nf
+2017-10-05 16:51:56	-	scruffy_majorana	-	fe989985f2e5d2316b6d0b4b6f678f68	d77626cd-774b-4a30-b3b4-87a2af76fc77	nextflow run CrossValidate.nf
+2017-10-05 16:52:17	6.8s	reverent_cori	OK	7d3299be1b419686d8ff016c29113425	c83354af-c7a0-4b0b-83d6-f4e0e9585cae	nextflow run CrossValidate.nf
+2017-10-05 16:57:04	3s	shrivelled_lavoisier	ERR	56cf7f0e9c1e8abb9f7b98492cea591b	7feb5f82-4a49-4448-9c16-ed3b662f1b38	nextflow run CrossValidate.nf
+2017-10-05 16:57:56	7.2s	mad_lamarck	OK	7d3299be1b419686d8ff016c29113425	450f99c1-530c-47c6-b14e-da0c21900b20	nextflow run CrossValidate.nf
+2017-10-05 17:04:22	7.7s	naughty_almeida	OK	159ce5719c4fb55bf929aa14c5558d13	71c72ce0-e6a2-42f1-994a-78a323a9842c	nextflow run CrossValidate.nf
+2017-10-05 17:09:59	3s	infallible_goldberg	ERR	722fd1f4562a97a611019e5dfc3580df	7066ae73-e2ef-403d-89f0-54828efe3609	nextflow run CrossValidate.nf
+2017-10-05 17:12:33	3s	astonishing_stonebraker	ERR	fbcf71305bd44d91791a13f5023758ad	129573dc-5f09-4404-9910-cede0fe85d19	nextflow run CrossValidate.nf
+2017-10-05 17:14:23	-	goofy_shockley	-	062a7f2ca463b329b8720eae9dbb98e3	ea2a86d9-bdf9-4453-b246-c3f63608f1ca	nextflow run CrossValidate.nf
+2017-10-05 17:15:24	3.1s	irreverent_bhabha	ERR	2e29ffc34585aaab10c7995d92bf2985	9a1d2f1a-6794-4c2b-ad32-76e091cc4f0b	nextflow run CrossValidate.nf
+2017-10-05 17:18:39	3.3s	kickass_shaw	ERR	560be1bd121f23bc3bceda982d4a4e93	51a07045-b45a-4575-9fdc-309c1ca04d4b	nextflow run CrossValidate.nf
+2017-10-05 17:19:20	3.4s	jolly_roentgen	ERR	48f6f755969d1f4434d4b9e35efc84cd	899c39b3-60fe-4160-b910-350a9e2acb24	nextflow run CrossValidate.nf
+2017-10-05 17:19:45	3.1s	hungry_sinoussi	ERR	38e06e8f64b1f63c66a2adbb74e6cbe5	38346f11-8e3a-456b-93ec-9ac5e43ca777	nextflow run CrossValidate.nf
+2017-10-05 17:20:57	3.5s	small_ride	ERR	d011e29d4f33fcff0dc407b73b609fd4	40c842dc-90ce-472a-9b6d-21df6580e249	nextflow run CrossValidate.nf
+2017-10-05 17:21:43	2.9s	voluptuous_easley	ERR	813cb1a721dcd4a536bcb51132e5f1e7	080ada03-4e16-49f7-9884-05e25d2b1596	nextflow run CrossValidate.nf
+2017-10-05 17:22:04	2.6s	small_banach	ERR	6704b91112c75e23671b0e2ace63107c	c7a6198d-a676-47ab-8771-486a4a474923	nextflow run CrossValidate.nf
+2017-10-05 17:22:34	3s	kickass_khorana	ERR	754c82ab4a1f6c19cfdeb4592b32247e	fc694130-8134-43d4-b0f3-e8bc98fe7dc1	nextflow run CrossValidate.nf
+2017-10-05 17:22:50	7.2s	grave_picasso	OK	69c81a49b34d4b5c00951dd1e53be3b7	275e734e-4491-4aaf-b6a4-356394a61eef	nextflow run CrossValidate.nf
+2017-10-05 17:32:45	5.7s	serene_mcclintock	ERR	4f755cacc5580f2be90ee6039071c8c5	fb18744b-a342-46e9-be06-7e2d346e741c	nextflow run CrossValidate.nf
+2017-10-05 17:33:46	7.5s	trusting_descartes	OK	e159532f7ad5acc4a6fb840001798421	90cbf905-c2bf-4a49-a961-d70787d582b9	nextflow run CrossValidate.nf
+2017-10-05 17:36:16	6.5s	golden_faggin	ERR	95ab3f5b2caa21e3fe7d04787765946f	934b7f0f-73fb-4596-943e-22cd187b4ded	nextflow run CrossValidate.nf
+2017-10-05 17:38:03	7s	golden_mercator	ERR	379f2109c99370bed5fa7bc41a2c6c65	c0712924-c7d6-4fd9-bdd8-04b499f7242a	nextflow run CrossValidate.nf
+2017-10-05 17:39:02	7.7s	sick_ritchie	ERR	b910de86b893ce28f716af7c48f455d0	0f5874d8-bf4d-4c16-8761-1aa11e40d994	nextflow run CrossValidate.nf
+2017-10-05 17:39:55	8s	boring_lalande	OK	e6db9ac10f4f84df2ed45a36240dd310	dcf61690-e38c-4b85-aa14-bb8736fee94b	nextflow run CrossValidate.nf
+2017-10-05 17:40:55	8.7s	stupefied_curran	OK	94196a850a1d7f242013f085ab841e99	1c1a4606-7d14-4c39-9b92-7da7753ef1b9	nextflow run CrossValidate.nf
+2017-10-05 17:43:56	7.8s	focused_yalow	OK	fa81ecb81a89614bd90136dc2731183f	a09bd759-f8f8-4992-b46c-c86cf186995b	nextflow run CrossValidate.nf
+2017-10-05 17:46:00	7.6s	serene_kalam	OK	fa81ecb81a89614bd90136dc2731183f	f35125ab-d690-47c4-8606-b675648b3f5e	nextflow run CrossValidate.nf
+2017-10-05 17:50:04	7.9s	nasty_kare	OK	c2145b49b904f52a27850592fd5201bb	616129d7-f7ce-4204-8665-ef95ce677ab7	nextflow run CrossValidate.nf
+2017-10-05 17:51:30	10.2s	prickly_minsky	OK	cfcbf66204d390cba04a7e3885e51744	74d2c80a-46f0-4089-887d-f7c11c2f0914	nextflow run CrossValidate.nf
+2017-10-05 17:59:50	10.3s	festering_volhard	OK	c91e5d539cb68e866a323a6787bfcec4	38aebed9-3ecd-465c-a806-84c53d8e2b50	nextflow run CrossValidate.nf
+2017-10-05 18:01:51	7.9s	clever_austin	ERR	e26582764f77858cf2602755f38c90fc	c745f020-d82e-4c8c-9256-36574843a411	nextflow run CrossValidate.nf
+2017-10-05 18:04:14	8s	lethal_rubens	ERR	4a4d024a29e155f7d0df00ab2e98bd1e	e113f6f6-02eb-493f-b7d6-a0097d17e318	nextflow run CrossValidate.nf
+2017-10-05 18:04:37	9.6s	goofy_noyce	OK	19a5926e7d7102289c052b62516366d8	9915644a-07f3-4a3e-82fb-f9a38276a80e	nextflow run CrossValidate.nf
+2017-10-05 18:06:26	10s	magical_babbage	OK	c9c7348632b5bd9aee0c2a8b44104325	f27c0b10-dda7-4d1b-a90b-e9f55863b517	nextflow run CrossValidate.nf
+2017-10-05 18:09:53	8.9s	modest_raman	OK	62e14cbd8dfddf2654b8a13a7f9f0212	aaff905a-143a-4822-9dc4-b819cba3a8c2	nextflow run CrossValidate.nf
+2017-10-05 18:11:26	8.7s	marvelous_dalembert	ERR	d6306acd46975ce96da799c006afae18	f18fabc9-9568-4953-a4f8-c7fe1f081255	nextflow run CrossValidate.nf
+2017-10-05 18:12:52	8.1s	cranky_ramanujan	ERR	c926a4a1be03eccc4de0893eb4c26b8c	9cc8eead-dc9e-4808-bd14-c1019f22f1e3	nextflow run CrossValidate.nf
+2017-10-05 18:14:19	7.6s	fervent_bohr	ERR	657f3d23b81a96d843e21729afcd5e26	125bb09b-2f7b-4046-ab89-c530fa11cf49	nextflow run CrossValidate.nf
+2017-10-05 18:15:01	8.6s	condescending_mercator	ERR	de4f26d86b27b1dc3caf583feab68bf9	6456b451-d863-4a26-a3e7-cb17f8be98cf	nextflow run CrossValidate.nf
+2017-10-05 18:16:31	8.2s	astonishing_sinoussi	ERR	6ea31289b4bf761ba9b95e3bec8a0639	68ac0585-9fb9-41d8-8c5c-758c92e5ff76	nextflow run CrossValidate.nf
+2017-10-05 18:17:24	8.1s	golden_baekeland	ERR	38f1409cf5cc407495d679c091dab61b	677fc165-9913-4a19-99af-01fd79007131	nextflow run CrossValidate.nf
+2017-10-05 18:21:11	8.6s	high_jepsen	ERR	cae32f816c5d4c6a41377beaae59a479	5b17ff13-0f83-49fb-b746-2c6df15a48d2	nextflow run CrossValidate.nf
+2017-10-05 18:22:52	-	marvelous_lamarr	-	2574ac881e0a415523969579b4b5a2de	18a7a28d-00b8-4c7e-8d82-9a45fbbe9049	nextflow run CrossValidate.nf
+2017-10-05 18:23:22	-	boring_mclean	-	c292ae49281604fd053ed1242fca6c53	1eac835a-2827-4e34-abb7-093354ee99af	nextflow run CrossValidate.nf
+2017-10-05 18:24:15	-	insane_bassi	-	254680282c3d75e9399c4ffca0a2dbc9	d29afc2b-3814-4c4f-a6a6-f93078b13a8f	nextflow run CrossValidate.nf
+2017-10-05 18:24:39	9.6s	lethal_davinci	OK	60d23db1dc07457df79952ef55d3a1bc	196c9398-88e3-4079-8ba5-c71977adb240	nextflow run CrossValidate.nf
+2017-10-05 18:46:36	-	shrivelled_ramanujan	-	65719efd688069a4defeaa7bedc617cd	dabce01e-4ada-4cc0-b2f4-2649b6c87e0f	nextflow run CrossValidate.nf
+2017-10-05 18:55:28	8.6s	sad_jepsen	ERR	95c76cc5f2ab339a43017e8e309de962	b0ab73e6-d8fe-411d-a274-a98f52cf1646	nextflow run CrossValidate.nf
+2017-10-05 19:00:25	8.2s	gloomy_carson	ERR	c824f0347140ebd0296b7eb75f137107	a5865221-cf88-48a3-8b93-8c01f5134582	nextflow run CrossValidate.nf
+2017-10-09 13:23:51	4.5s	spontaneous_morse	ERR	561cf9acf2672e56b7f1562433119259	c7ffd82d-e548-4470-a87d-0218335e0ecc	nextflow run CrossValidate.nf
+2017-10-09 13:24:21	6.4s	curious_jennings	ERR	5bb06ad52824bdb7db1ee40ae173ef37	d53dfa0b-049f-4f0d-b1ba-ab3f9cddbb85	nextflow run CrossValidate.nf
+2017-10-09 13:26:28	-	distraught_lumiere	-	39cde76636b04176370b24f64fdb8b67	e1eed860-03bd-4f20-926a-eefaa4cf6057	nextflow run CrossValidate.nf
+2017-10-09 13:27:51	10s	disturbed_hodgkin	ERR	deb7a004193b18ab0aa69cbfa113f339	b8db9b1f-8ee7-4563-b71c-1b9312a60351	nextflow run CrossValidate.nf
+2017-10-09 13:30:05	11.3s	exotic_fermat	ERR	dfdc9bc53186ef7f783d09d3ece77fa0	49746aab-bb46-4e2e-9f9b-8f791499a155	nextflow run CrossValidate.nf
+2017-10-09 13:32:57	16s	drunk_almeida	ERR	fe648035560ced2ca3eb437f5cdbadcd	ff40df57-2be3-4da9-a638-857d40641aec	nextflow run CrossValidate.nf
+2017-10-09 13:39:23	9.4s	prickly_nobel	ERR	424cda84490a712834010366ef106e23	e3fd6b0b-920c-4256-b239-e5ec674a8f90	nextflow run CrossValidate.nf
+2017-10-09 13:45:16	3.4s	sad_minsky	ERR	dc4609e1b56c142305a30baecf05ef71	067a41da-1653-4976-88c0-668a046d6665	nextflow run CrossValidate.nf
+2017-10-09 13:53:11	3.7s	pedantic_dalembert	ERR	205b05496a1948a1b9f357a2ab5f716e	99b82149-3ed5-4a09-b49c-44a24226651b	nextflow run CrossValidate.nf
+2017-10-09 13:53:49	3.7s	nauseous_saha	ERR	205b05496a1948a1b9f357a2ab5f716e	7668f7fe-dcc1-4ab3-819e-92f51e31fb78	nextflow run CrossValidate.nf
+2017-10-09 14:01:24	4.5s	drunk_bhaskara	ERR	edeaebb0ed55fc1172f3230aab9ebb55	1b634d42-5e1e-4ca8-975c-5322bdc053d0	nextflow run CrossValidate.nf
+2017-10-09 14:02:30	4.3s	loving_golick	ERR	3690fd12fb4d2302ec418134d2f3183f	28786902-4e79-429e-86ef-8c97807df596	nextflow run CrossValidate.nf
+2017-10-09 14:12:16	3.9s	sad_montalcini	ERR	1845572cea8e5576ab20b3a6c8234659	a517e2ef-257d-4be5-b78a-649bfded3263	nextflow run CrossValidate.nf
+2017-10-09 14:15:45	4.2s	big_torvalds	ERR	1845572cea8e5576ab20b3a6c8234659	06f8256f-68db-4ea9-a861-240baba04519	nextflow run CrossValidate.nf
+2017-10-09 14:21:24	-	maniac_shaw	-	8a609d8f85b7c243e513d5d2cf13815f	2f7e3b08-b8b8-43f4-bb0b-c81d78d3c490	nextflow run CrossValidate.nf
+2017-10-09 14:21:37	3.3s	drunk_sanger	ERR	93a441cc2363b286e9923a3d33159596	627b6010-4eba-4831-aeef-6498b3a9892c	nextflow run CrossValidate.nf
+2017-10-09 14:25:43	9.5s	lonely_minsky	ERR	60899091274d30158bbb1a778abc88ed	af52fcd3-2120-4645-941e-09952a87dd53	nextflow run CrossValidate.nf
+2017-10-09 14:38:55	8.1s	mad_woese	ERR	eab6a63ecf490c958c247adc8b303c0c	f7c9f18f-4f5b-4a3e-963a-6aed23441c18	nextflow run CrossValidate.nf
+2017-10-09 14:44:24	8.4s	irreverent_meucci	OK	a2abe323d50c64ed1567e1648df39d83	387145cc-fa34-4597-a2f1-da72238aa0a5	nextflow run CrossValidate.nf
