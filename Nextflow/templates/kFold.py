@@ -13,6 +13,7 @@ if len(sys.argv) == 1:
 from itertools import (takewhile,repeat)
 
 setName = sys.argv[1]
+shufName = setName + "Shuffled"
 noFolds = int(sys.argv[2])
 workDir = sys.argv[3]
 
@@ -35,21 +36,26 @@ subsetValue1 = int(math.ceil(numberOfLines/float(noFolds)))
 subsetValue2 = int(math.floor(numberOfLines/float(noFolds)))
 lowerbound = 1
 
+os.chdir(workDir)
+cmdStr = "shuf " + setName + ".fam > " + shufName + ".fam"
+subprocess.call(cmdStr,shell=True)
+
 for i in range(1,noFolds+1):
     if i <= subsetSize1:
         os.chdir(workDir)
-        cmdStr = "sed -n '" + str(lowerbound) + "," + str(lowerbound + subsetValue1 -1) + "p' " + setName + ".fam > " + setName + "Family" + str(i) + ".fam"
-        logging.warning(cmdStr)
+        cmdStr = "sed -n '" + str(lowerbound) + "," + str(lowerbound + subsetValue1 -1) + "p' " + shufName + ".fam > " + setName + "Fold" + str(i) + ".fam"
         subprocess.call(cmdStr,shell=True)
-        cmdStr = "mv " + setName + "Family" + str(i) + ".fam " + workPath
-        logging.warning(cmdStr)
+        cmdStr = "mv " + setName + "Fold" + str(i) + ".fam " + workPath
         subprocess.call(cmdStr,shell=True)
         lowerbound += subsetValue1
     else:
-        cmdStr = "sed -n '" + str(lowerbound) + "," + str(lowerbound + subsetValue2 -1) + "p' " + setName + ".fam > " + setName + "Family" + str(i) + ".fam"
+        cmdStr = "sed -n '" + str(lowerbound) + "," + str(lowerbound + subsetValue2 -1) + "p' " + shufName + ".fam > " + setName + "Fold" + str(i) + ".fam"
         os.chdir(workDir)
         subprocess.call(cmdStr,shell=True)
-        cmdStr = "mv " + setName + "Family" + str(i) + ".fam " + workPath
-        logging.warning(cmdStr)
+        cmdStr = "mv " + setName + "Fold" + str(i) + ".fam " + workPath
         subprocess.call(cmdStr,shell=True)
         lowerbound += subsetValue2
+
+os.chdir(workDir)
+cmdStr = "rm " + shufName + ".fam"
+subprocess.call(cmdStr,shell=True)

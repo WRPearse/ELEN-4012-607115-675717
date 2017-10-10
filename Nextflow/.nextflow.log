@@ -1,0 +1,156 @@
+Oct-10 19:46:10.518 [main] DEBUG nextflow.cli.Launcher - $> ./nextflow run CrossValidate.nf
+Oct-10 19:46:10.920 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 0.25.7
+Oct-10 19:46:10.968 [main] INFO  nextflow.cli.CmdRun - Launching `CrossValidate.nf` [big_legentil] - revision: 6a967d2c91
+Oct-10 19:46:10.996 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: nextflow.config
+Oct-10 19:46:11.004 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/wpearse/Documents/Nextflow/nextflow.config
+Oct-10 19:46:11.554 [main] DEBUG nextflow.config.ConfigBuilder - Setting config profile: 'standard'
+Oct-10 19:46:11.687 [main] DEBUG nextflow.Session - Session uuid: 8a718ce4-3010-4be6-8051-1986a54ee351
+Oct-10 19:46:11.687 [main] DEBUG nextflow.Session - Run name: big_legentil
+Oct-10 19:46:11.689 [main] DEBUG nextflow.Session - Executor pool size: 2
+Oct-10 19:46:11.710 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 0.25.7 build 4531
+  Modified: 06-09-2017 17:25 UTC (19:25 SAST)
+  System: Linux 4.10.0-19-generic
+  Runtime: Groovy 2.4.11 on OpenJDK 64-Bit Server VM 1.8.0_131-8u131-b11-2ubuntu1.17.04.3-b11
+  Encoding: UTF-8 (UTF-8)
+  Process: 12676@wpearse-VirtualBox [127.0.1.1]
+  CPUs: 1 - Mem: 3.9 GB (611.2 MB) - Swap: 1.4 GB (1.4 GB)
+Oct-10 19:46:11.767 [main] DEBUG nextflow.Session - Work-dir: /home/wpearse/Documents/Nextflow/work [ext2/ext3]
+Oct-10 19:46:11.878 [main] DEBUG nextflow.Session - Session start invoked
+Oct-10 19:46:11.881 [main] DEBUG nextflow.processor.TaskDispatcher - Dispatcher > start
+Oct-10 19:46:11.881 [main] DEBUG nextflow.script.ScriptRunner - > Script parsing
+Oct-10 19:46:12.216 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Oct-10 19:46:12.502 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Oct-10 19:46:12.502 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Oct-10 19:46:12.515 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Oct-10 19:46:12.516 [main] INFO  nextflow.executor.Executor - [warm up] executor > local
+Oct-10 19:46:12.521 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=1; memory=3.9 GB; capacity=1; pollInterval=100ms; dumpInterval=5m
+Oct-10 19:46:12.523 [main] DEBUG nextflow.processor.TaskDispatcher - Starting monitor: LocalPollingMonitor
+Oct-10 19:46:12.529 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Oct-10 19:46:12.538 [main] DEBUG nextflow.executor.Executor - Invoke register for executor: local
+Oct-10 19:46:12.601 [main] DEBUG nextflow.Session - >>> barrier register (process: generateFolds)
+Oct-10 19:46:12.629 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > generateFolds -- maxForks: 2
+Oct-10 19:46:12.687 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Oct-10 19:46:12.687 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Oct-10 19:46:12.687 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Oct-10 19:46:12.688 [main] DEBUG nextflow.Session - >>> barrier register (process: associationTest)
+Oct-10 19:46:12.697 [main] DEBUG nextflow.processor.TaskProcessor - Creating *combiner* operator for each param(s) at index(es): [1]
+Oct-10 19:46:12.762 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > associationTest -- maxForks: 2
+Oct-10 19:46:12.778 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Oct-10 19:46:12.781 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Oct-10 19:46:12.781 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Oct-10 19:46:12.782 [main] DEBUG nextflow.Session - >>> barrier register (process: squeeze)
+Oct-10 19:46:12.794 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > squeeze -- maxForks: 2
+Oct-10 19:46:12.804 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Oct-10 19:46:12.809 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Oct-10 19:46:12.809 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Oct-10 19:46:12.810 [main] DEBUG nextflow.Session - >>> barrier register (process: makeScoreFile)
+Oct-10 19:46:12.819 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > makeScoreFile -- maxForks: 2
+Oct-10 19:46:12.834 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Oct-10 19:46:12.835 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Oct-10 19:46:12.835 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Oct-10 19:46:12.838 [main] DEBUG nextflow.Session - >>> barrier register (process: scoreFamily)
+Oct-10 19:46:12.874 [main] DEBUG nextflow.processor.TaskProcessor - Creating *combiner* operator for each param(s) at index(es): [1]
+Oct-10 19:46:12.920 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > scoreFamily -- maxForks: 2
+Oct-10 19:46:12.945 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Oct-10 19:46:12.949 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Oct-10 19:46:12.949 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Oct-10 19:46:12.951 [main] DEBUG nextflow.Session - >>> barrier register (process: mergeComplete)
+Oct-10 19:46:12.964 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > mergeComplete -- maxForks: 2
+Oct-10 19:46:12.970 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Oct-10 19:46:12.971 [main] DEBUG nextflow.Session - Session await
+Oct-10 19:46:12.998 [Task submitter] INFO  nextflow.Session - [6f/c00b68] Submitted process > generateFolds
+Oct-10 19:46:13.186 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: generateFolds; status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/6f/c00b68f529c838d3adba13c0bab032]
+Oct-10 19:46:13.242 [Actor Thread 3] DEBUG nextflow.Session - <<< barrier arrive (process: generateFolds)
+Oct-10 19:46:13.294 [Task submitter] INFO  nextflow.Session - [7b/35c5d4] Submitted process > associationTest (2)
+Oct-10 19:46:13.520 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: associationTest (2); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/7b/35c5d4a7c5eda4efb973e229d55413]
+Oct-10 19:46:13.521 [Task submitter] INFO  nextflow.Session - [d6/465187] Submitted process > associationTest (1)
+Oct-10 19:46:13.650 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: associationTest (1); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/d6/465187f5a7073f679fc994a13b3942]
+Oct-10 19:46:13.653 [Task submitter] INFO  nextflow.Session - [22/9c204d] Submitted process > associationTest (3)
+Oct-10 19:46:13.778 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: associationTest (3); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/22/9c204d8744dca66d0dd3b981180a3c]
+Oct-10 19:46:13.783 [Task submitter] INFO  nextflow.Session - [39/a6437f] Submitted process > associationTest (4)
+Oct-10 19:46:13.897 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: associationTest (4); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/39/a6437f91152cb7f034facfd5344aae]
+Oct-10 19:46:13.899 [Task submitter] INFO  nextflow.Session - [15/d51398] Submitted process > associationTest (5)
+Oct-10 19:46:14.031 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: associationTest (5); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/15/d51398885ecdeeb25d72a15ea41dd5]
+Oct-10 19:46:14.033 [Task submitter] INFO  nextflow.Session - [42/06733c] Submitted process > associationTest (6)
+Oct-10 19:46:14.166 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: associationTest (6); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/42/06733c3c107a28602d686ecbeffc22]
+Oct-10 19:46:14.168 [Task submitter] INFO  nextflow.Session - [2b/a13aed] Submitted process > associationTest (8)
+Oct-10 19:46:14.269 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: associationTest (8); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/2b/a13aeda8f74df9b2598d447683427c]
+Oct-10 19:46:14.269 [Task submitter] INFO  nextflow.Session - [ce/00e9c6] Submitted process > associationTest (7)
+Oct-10 19:46:14.404 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: associationTest (7); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/ce/00e9c63cd5c18cf62f9834167f471d]
+Oct-10 19:46:14.405 [Task submitter] INFO  nextflow.Session - [71/ca3da9] Submitted process > associationTest (9)
+Oct-10 19:46:14.511 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: associationTest (9); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/71/ca3da9e68032c9f6cc35f65d184ac3]
+Oct-10 19:46:14.512 [Task submitter] INFO  nextflow.Session - [7d/fbb99d] Submitted process > associationTest (10)
+Oct-10 19:46:14.613 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: associationTest (10); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/7d/fbb99dfdb12566ef4c4a43a3b013d1]
+Oct-10 19:46:14.617 [Task submitter] INFO  nextflow.Session - [7a/9df67a] Submitted process > squeeze (1)
+Oct-10 19:46:14.623 [Actor Thread 7] DEBUG nextflow.Session - <<< barrier arrive (process: associationTest)
+Oct-10 19:46:14.674 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 12; name: squeeze (1); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/7a/9df67aa6ed411c59e8dc265e9ee457]
+Oct-10 19:46:14.676 [Task submitter] INFO  nextflow.Session - [d2/4075d1] Submitted process > squeeze (2)
+Oct-10 19:46:14.788 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 13; name: squeeze (2); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/d2/4075d18f784db750ea28f6d3f679db]
+Oct-10 19:46:14.789 [Task submitter] INFO  nextflow.Session - [19/dfd05a] Submitted process > squeeze (3)
+Oct-10 19:46:14.860 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 14; name: squeeze (3); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/19/dfd05a6c2b71a6d20e4047ee1d05f9]
+Oct-10 19:46:14.861 [Task submitter] INFO  nextflow.Session - [34/b8fb25] Submitted process > squeeze (4)
+Oct-10 19:46:14.932 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 15; name: squeeze (4); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/34/b8fb255e7cfae0e6582c3b5e763598]
+Oct-10 19:46:14.933 [Task submitter] INFO  nextflow.Session - [6c/d95f8e] Submitted process > squeeze (5)
+Oct-10 19:46:15.011 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 16; name: squeeze (5); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/6c/d95f8e1f40c992fb636a11e64c5fce]
+Oct-10 19:46:15.011 [Task submitter] INFO  nextflow.Session - [ba/79bb17] Submitted process > squeeze (6)
+Oct-10 19:46:15.094 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 17; name: squeeze (6); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/ba/79bb17387329e06122c06caf9efe71]
+Oct-10 19:46:15.095 [Task submitter] INFO  nextflow.Session - [1c/afe5e1] Submitted process > squeeze (7)
+Oct-10 19:46:15.210 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 18; name: squeeze (7); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/1c/afe5e166f81c77cd6e058772f321c3]
+Oct-10 19:46:15.212 [Task submitter] INFO  nextflow.Session - [5f/87f622] Submitted process > squeeze (8)
+Oct-10 19:46:15.298 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 19; name: squeeze (8); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/5f/87f6226b725f3192c5e37baecdb40d]
+Oct-10 19:46:15.300 [Task submitter] INFO  nextflow.Session - [25/12b221] Submitted process > squeeze (9)
+Oct-10 19:46:15.398 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 20; name: squeeze (9); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/25/12b221382e6e3a110e4a0ff40a0da0]
+Oct-10 19:46:15.401 [Task submitter] INFO  nextflow.Session - [a7/73753e] Submitted process > squeeze (10)
+Oct-10 19:46:15.487 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 21; name: squeeze (10); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/a7/73753e504cbaf52762b33c3c2bd328]
+Oct-10 19:46:15.488 [Task submitter] INFO  nextflow.Session - [d9/2daed0] Submitted process > makeScoreFile (1)
+Oct-10 19:46:15.497 [Actor Thread 7] DEBUG nextflow.Session - <<< barrier arrive (process: squeeze)
+Oct-10 19:46:15.629 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 22; name: makeScoreFile (1); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/d9/2daed0d835c61f51be9037e00c2015]
+Oct-10 19:46:15.632 [Task submitter] INFO  nextflow.Session - [f0/f2f9ee] Submitted process > makeScoreFile (2)
+Oct-10 19:46:15.820 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 23; name: makeScoreFile (2); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/f0/f2f9ee7df7f46450aac223abeb4408]
+Oct-10 19:46:15.821 [Task submitter] INFO  nextflow.Session - [2d/7c55f3] Submitted process > makeScoreFile (3)
+Oct-10 19:46:15.922 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 24; name: makeScoreFile (3); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/2d/7c55f39a66b4e267a49926f33a562a]
+Oct-10 19:46:15.923 [Task submitter] INFO  nextflow.Session - [33/5630d7] Submitted process > makeScoreFile (4)
+Oct-10 19:46:16.048 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 25; name: makeScoreFile (4); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/33/5630d7e52b4794571b1d43df68e0b5]
+Oct-10 19:46:16.049 [Task submitter] INFO  nextflow.Session - [fc/e32897] Submitted process > makeScoreFile (5)
+Oct-10 19:46:16.158 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 26; name: makeScoreFile (5); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/fc/e3289788d1dafb3599e20c488dd8b0]
+Oct-10 19:46:16.159 [Task submitter] INFO  nextflow.Session - [16/2a6083] Submitted process > makeScoreFile (6)
+Oct-10 19:46:16.276 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 27; name: makeScoreFile (6); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/16/2a60839cdbe07ecd9d96786b8b9c31]
+Oct-10 19:46:16.277 [Task submitter] INFO  nextflow.Session - [0b/80f6ad] Submitted process > makeScoreFile (7)
+Oct-10 19:46:16.394 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 28; name: makeScoreFile (7); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/0b/80f6ad5c233813d7f160438fd386eb]
+Oct-10 19:46:16.395 [Task submitter] INFO  nextflow.Session - [22/2873b3] Submitted process > makeScoreFile (8)
+Oct-10 19:46:16.511 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 29; name: makeScoreFile (8); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/22/2873b3b0651067dab798269c11b390]
+Oct-10 19:46:16.513 [Task submitter] INFO  nextflow.Session - [0d/ecc20d] Submitted process > makeScoreFile (9)
+Oct-10 19:46:16.643 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 30; name: makeScoreFile (9); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/0d/ecc20dc72426c7976bf588691a9c7c]
+Oct-10 19:46:16.644 [Task submitter] INFO  nextflow.Session - [f8/15cb32] Submitted process > makeScoreFile (10)
+Oct-10 19:46:16.762 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 31; name: makeScoreFile (10); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/f8/15cb329bbf9b208d5bd08a961591a1]
+Oct-10 19:46:16.765 [Actor Thread 7] DEBUG nextflow.Session - <<< barrier arrive (process: makeScoreFile)
+Oct-10 19:46:16.813 [Task submitter] INFO  nextflow.Session - [59/90f224] Submitted process > scoreFamily (2)
+Oct-10 19:46:17.058 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 33; name: scoreFamily (2); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/59/90f224bd6ab2537e426050ea56e652]
+Oct-10 19:46:17.060 [Task submitter] INFO  nextflow.Session - [56/3d375b] Submitted process > scoreFamily (1)
+Oct-10 19:46:17.278 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 32; name: scoreFamily (1); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/56/3d375b11b22b5fa08b10a3dc8f8aef]
+Oct-10 19:46:17.279 [Task submitter] INFO  nextflow.Session - [b5/a5921a] Submitted process > scoreFamily (3)
+Oct-10 19:46:17.499 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 34; name: scoreFamily (3); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/b5/a5921aa19e1eb2ad7ee3d004734ebf]
+Oct-10 19:46:17.500 [Task submitter] INFO  nextflow.Session - [d0/534a01] Submitted process > scoreFamily (4)
+Oct-10 19:46:17.694 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 35; name: scoreFamily (4); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/d0/534a012c640124cd09696f35f271ab]
+Oct-10 19:46:17.695 [Task submitter] INFO  nextflow.Session - [82/152b53] Submitted process > scoreFamily (5)
+Oct-10 19:46:17.811 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 36; name: scoreFamily (5); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/82/152b53d56650b7cb28260831c8df57]
+Oct-10 19:46:17.812 [Task submitter] INFO  nextflow.Session - [f0/72e6a9] Submitted process > scoreFamily (7)
+Oct-10 19:46:17.958 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 38; name: scoreFamily (7); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/f0/72e6a95aaefcb29d6a17ec808d9396]
+Oct-10 19:46:17.959 [Task submitter] INFO  nextflow.Session - [8e/961e07] Submitted process > scoreFamily (8)
+Oct-10 19:46:18.089 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 39; name: scoreFamily (8); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/8e/961e077a59afe96f5cc5bb2bebdbd1]
+Oct-10 19:46:18.093 [Task submitter] INFO  nextflow.Session - [8b/dee62f] Submitted process > scoreFamily (6)
+Oct-10 19:46:18.208 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 37; name: scoreFamily (6); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/8b/dee62f2bfc8fd9ce1c9596536096e2]
+Oct-10 19:46:18.211 [Task submitter] INFO  nextflow.Session - [93/b17536] Submitted process > scoreFamily (9)
+Oct-10 19:46:18.334 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 40; name: scoreFamily (9); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/93/b175364bac224e71fdccedc6d06445]
+Oct-10 19:46:18.335 [Task submitter] INFO  nextflow.Session - [5e/91f07f] Submitted process > scoreFamily (10)
+Oct-10 19:46:18.566 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 41; name: scoreFamily (10); status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/5e/91f07f033409bee4122ac639f58cf8]
+Oct-10 19:46:18.568 [Actor Thread 7] DEBUG nextflow.Session - <<< barrier arrive (process: scoreFamily)
+Oct-10 19:46:18.581 [Task submitter] INFO  nextflow.Session - [ce/5a0d30] Submitted process > mergeComplete
+Oct-10 19:46:18.631 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 42; name: mergeComplete; status: COMPLETED; exit: 0; error: -; workDir: /home/wpearse/Documents/Nextflow/work/ce/5a0d30b07591dfc5122e46e4c509d3]
+Oct-10 19:46:18.633 [Actor Thread 7] DEBUG nextflow.Session - <<< barrier arrive (process: mergeComplete)
+Oct-10 19:46:18.633 [main] DEBUG nextflow.Session - Session await > all process finished
+Oct-10 19:46:18.633 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local)
+Oct-10 19:46:18.634 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Oct-10 19:46:18.661 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Oct-10 19:46:18.733 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
