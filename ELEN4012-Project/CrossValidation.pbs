@@ -1,0 +1,7 @@
+#!/bin/bash
+#PBS -N ELEN4012-CV
+#PBS -q short
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=00:01:00
+cd /home/wpearse/Test/ELEN4012-Project/Nextflow/
+./nextflow run CrossValidate.nf -with-trace -with-timeline CrossValidateTimeLine
