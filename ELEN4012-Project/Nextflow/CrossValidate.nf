@@ -60,7 +60,7 @@ process squeeze {
 }
 
 process makeScoreFile {
-echo = true
+   echo = true
    foldScore = params.setName+"*.assoc"
    input:
     file(foldScore) from squeeze_ch
@@ -86,9 +86,10 @@ process scoreFamily {
     each file(scoreFile) from score_ch
     file(families) from families_ch2
 
-   publishDir params.outputDir, overwrite:true, mode:'copy'
    output:
       file(params.setName+"Fold*.profile") into result_ch
+
+   publishDir params.outputDir, overwrite:true, mode:'copy'
 
    script:
    setName = params.setName
@@ -102,15 +103,17 @@ process scoreFamily {
 
 process mergeComplete {
   input:
-    file(profiles) from result_ch.count().subscribe {println it}
-
-//  output:
-//    file(params.setName+".profile") into complete_ch
+    file(profiles) from result_ch
 
   script:
+  setName = params.setName
+  fileNameStr = profiles.getName()
   """
-
+  cd $params.outputDir
+  cat $fileNameStr >> ${setName}.result
+  rm $fileNameStr
+  tr -s \\  < ${setName}.result > ${setName}.temp
+  sort -k 1 -u ${setName}.temp > ${setName}.result
+  rm ${setName}.temp
   """
 }
-
-//Channel.from(result_ch).subscribe onNext: { println it}, onComplete: { println "Cross training complete!!!" }
