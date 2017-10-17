@@ -6,9 +6,10 @@ from subprocess import call
 import math
 import os
 import logging
+
 # Called as a template from nextflow
 if len(sys.argv) == 1:
-    sys.argv=["kFold.py","$setName","$noFolds","$workDir"]
+    sys.argv=["kFold.py","$setName","$noFolds","$workDir","$noBootstraps"]
 
 from itertools import (takewhile,repeat)
 
@@ -16,6 +17,7 @@ setName = sys.argv[1]
 shufName = setName + "Shuffled"
 noFolds = int(sys.argv[2])
 workDir = sys.argv[3]
+noBootstraps = int(sys.argv[4])
 
 workPath = os.path.dirname(os.path.realpath(__file__))
 
@@ -36,26 +38,28 @@ subsetValue1 = int(math.ceil(numberOfLines/float(noFolds)))
 subsetValue2 = int(math.floor(numberOfLines/float(noFolds)))
 lowerbound = 1
 
-os.chdir(workDir)
-cmdStr = "shuf " + setName + ".fam > " + shufName + ".fam"
-subprocess.call(cmdStr,shell=True)
+for j in range(1,noBootstraps+1):
+    lowerbound = 1
+    os.chdir(workDir)
+    cmdStr = "shuf " + setName + ".fam > " + shufName + str(j) + ".fam"
+    subprocess.call(cmdStr,shell=True)
 
-for i in range(1,noFolds+1):
-    if i <= subsetSize1:
-        os.chdir(workDir)
-        cmdStr = "sed -n '" + str(lowerbound) + "," + str(lowerbound + subsetValue1 -1) + "p' " + shufName + ".fam > " + setName + "Fold" + str(i) + ".fam"
-        subprocess.call(cmdStr,shell=True)
-        cmdStr = "mv " + setName + "Fold" + str(i) + ".fam " + workPath
-        subprocess.call(cmdStr,shell=True)
-        lowerbound += subsetValue1
-    else:
-        cmdStr = "sed -n '" + str(lowerbound) + "," + str(lowerbound + subsetValue2 -1) + "p' " + shufName + ".fam > " + setName + "Fold" + str(i) + ".fam"
-        os.chdir(workDir)
-        subprocess.call(cmdStr,shell=True)
-        cmdStr = "mv " + setName + "Fold" + str(i) + ".fam " + workPath
-        subprocess.call(cmdStr,shell=True)
-        lowerbound += subsetValue2
+    for i in range(1,noFolds+1):
+        if i <= subsetSize1:
+            os.chdir(workDir)
+            cmdStr = "sed -n '" + str(lowerbound) + "," + str(lowerbound + subsetValue1 -1) + "p' " + shufName + str(j) + ".fam > " + setName + "Fold" + str(i) + "Boot" + str(j) + ".fam"
+            subprocess.call(cmdStr,shell=True)
+            cmdStr = "mv " + setName + "Fold" + str(i) + "Boot" + str(j) + ".fam " + workPath
+            subprocess.call(cmdStr,shell=True)
+            lowerbound += subsetValue1
+        else:
+            cmdStr = "sed -n '" + str(lowerbound) + "," + str(lowerbound + subsetValue2 -1) + "p' " + shufName + str(j) + ".fam > " + setName + "Fold" + str(i) + "Boot" + str(j) + ".fam"
+            os.chdir(workDir)
+            subprocess.call(cmdStr,shell=True)
+            cmdStr = "mv " + setName + "Fold" + str(i) + "Boot" + str(j) + ".fam " + workPath
+            subprocess.call(cmdStr,shell=True)
+            lowerbound += subsetValue2
 
-os.chdir(workDir)
-cmdStr = "rm " + shufName + ".fam"
-subprocess.call(cmdStr,shell=True)
+    os.chdir(workDir)
+    cmdStr = "rm " + shufName + str(j) + ".fam"
+    subprocess.call(cmdStr,shell=True)

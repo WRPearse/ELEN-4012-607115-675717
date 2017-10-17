@@ -20,6 +20,7 @@ process generateFolds {
    script:
     setName = params.setName
     noFolds = params.numFolds
+    noBootstraps = params.numBootstraps
     workDir = params.inputDir
     template "kFold.py"
 }
@@ -89,8 +90,6 @@ process scoreFamily {
    output:
       file(params.setName+"Fold*.profile") into result_ch
 
-   publishDir params.outputDir, overwrite:true, mode:'copy'
-
    script:
    setName = params.setName
    fileNameStr = scoreFile.getName()
@@ -101,19 +100,40 @@ process scoreFamily {
    """
 }
 
-process mergeComplete {
+process mergeProfile {
+  echo true
   input:
-    file(profiles) from result_ch
+    file(profiles) from result_ch.toList()
+
+  output:
+    file(params.setName + ".result") into merge_ch
+
+  publishDir params.outputDir, overwrite:true, mode:'copy'
 
   script:
-  setName = params.setName
-  fileNameStr = profiles.getName()
-  """
-  cd $params.outputDir
-  cat $fileNameStr >> ${setName}.result
-  rm $fileNameStr
-  tr -s \\  < ${setName}.result > ${setName}.temp
-  sort -k 1 -u ${setName}.temp > ${setName}.result
-  rm ${setName}.temp
-  """
+    setName = params.setName
+    noHeadlines = (params.numFolds*params.numBootstraps)-1
+    """
+    cat *.profile >> ${setName}.result
+    tr -s \\  < ${setName}.result > ${setName}.temp
+    sort -k 1 ${setName}.temp > ${setName}.result
+    sed -i -e '1,${noHeadlines}d' ${setName}.result
+    """
 }
+
+process BootstrapAnalysis {
+  input:
+    file(results) from merge_ch
+
+  output:
+    file(params.setName + ".output") into finish_ch
+
+  publishDir params.outputDir, overwrite:true, mode:'copy'
+
+  script:
+    setName = params.setName
+    template "BootstrapAnalysis.py"
+}
+
+
+finish_ch.subscribe(){println "Analysis Complete"}
